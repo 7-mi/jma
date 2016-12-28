@@ -1,0 +1,1304 @@
+@charset "utf-8";
+
+// ============================
+// 共通パーツ読み込み
+// ============================
+@import "_core";
+
+// ============================
+// 下層共通要素
+// ============================
+/*==============================
+intersection of SubPgae
+==============================*/
+.l-header{
+	background: #333;
+}
+.h1-area{
+	top:-80px;
+}
+.l-pagemv{
+	display: table;
+	width: 100%;
+
+	height: 380px;
+	margin: 80px 0 25px;
+	background: no-repeat center top;
+	.page-head{
+		min-width: 1230px;
+		display: table-cell;
+		vertical-align: middle;
+		color: #FFF;
+		.fjalla.center{
+			margin:0 0 30px;
+			font-size: 36px;
+			line-height: 1;
+			text-transform:uppercase;
+		}
+		.ja-ttl{
+			font-size: 18px;
+			font-weight: 800;
+			line-height: 1;
+		}
+	}
+}
+$mv: 'reason' , 'program' , 'lecturer' , 'faq', 'company', 'topics'  ;
+	@each $page-mv in $mv {
+	.l-pagemv.#{$page-mv}-mv {
+		background-image: url(../img/page/#{$page-mv}/#{$page-mv}_mv_bg.png);
+	}
+}
+.l-pagemv.course-01-mv {
+	background-image: url(../img/page/course/course_01_mv_bg.png);
+}
+.l-pagemv.course-02-mv {
+	background-image: url(../img/page/course/course_02_mv_bg.png);
+}
+.l-pagemv.course-03-mv {
+	background-image: url(../img/page/course/course_03_mv_bg.png);
+}
+.l-pagemv.course-04-mv {
+	background-image: url(../img/page/course/course_04_mv_bg.png);
+}
+.l-pagemv.course-05-mv {
+	background-image: url(../img/page/course/course_05_mv_bg.png);
+}
+.l-breadcrumbs{
+	margin: 0  0 30px;
+	ul{
+		li{
+			float: left;
+			padding: 0 10px 0 0;
+			color: #9f9f9f;
+			line-height: 1;
+			font-size: 12px;
+			a{
+				color: #9f9f9f;
+				text-decoration: underline;
+			}
+		}
+		li::before{
+			padding: 0 12px 0 0;
+			content:url(../img/module/arrow_01.png);
+		}
+	}
+}
+
+.page-head{
+	margin: 0 0 45px;
+	font-size: 28px;
+	font-weight: 800;
+	letter-spacing: .05em;
+	text-indent: .05em;
+	text-align: center;
+}
+
+.second-key-color{
+	color: $key02;
+}
+
+// ============================
+// 理由
+// ============================
+/*==============================
+.l-reason
+==============================*/
+.l-reason{
+	@include f-4-list($width:1200px,$mr:20px,$mb:0);
+	.reason-list{
+		margin: 0 0 30px;
+		li{
+			box-shadow: 10px 10px 0 #efefef;
+		}
+		.list-head {
+			width: 100%;
+			color: #fff;
+			background: $key02;
+			.cell{
+				font-weight: 800;
+				line-height: 1.575;
+				font-size: 16px;
+				vertical-align: middle;
+				letter-spacing: .05em;
+			}
+			.list-order{
+				padding: 0 30px;
+				width: 70px;
+				font-size: 36px;
+				font-style: italic;
+				text-align: center;
+			}
+		}
+		.list-txt{
+			padding: 20px 30px;
+			min-height: 162px;
+			border: 1px solid #efefef;
+			border-top: none;
+			line-height: 1.8;
+			.table{
+				height: 100%;
+			}
+			.cell{
+				vertical-align: middle;
+			}
+		}
+	}
+	.concept-box{
+		padding: 0 0 60px;
+
+	}
+	.reason-container-box{
+		padding: 100px 0;
+		.txt-box{
+			float: left;
+			line-height: 1.8;
+			h4{
+				margin: 0 0 20px;
+				font-size: 24px;
+				font-weight: 800;
+				letter-spacing: .05em;
+			}
+		}
+		.img-box{
+			float: right;
+		}
+		.reason-content{
+			width: 570px;
+		}
+	}
+	.concept-box{
+		.bg-box{
+			background: $bg;
+				.reason-container-box:nth-child(odd){
+					.txt-box{
+						float: left;
+					}
+					.img-box{
+						float: right;
+					}
+			}
+		}
+	}
+	.concept-box{
+		.reason-container-box:nth-child(odd){
+			.txt-box{
+				float: right;
+			}
+			.img-box{
+				float: left;
+			}
+		}
+	}
+	.data-box{
+		padding: 100px 0 60px;
+		margin:0 0 100px;
+		background: $bg;
+		.reason-data-box{
+			width: 830px;
+			margin: 0 auto 30px;
+			text-align: center;
+			font-weight: 800;
+			dt{
+				font-size: 18px;
+				letter-spacing: .05em;
+				text-indent: .05em;
+				color: #fff;
+				background: $key02;
+			}
+			dd{
+				padding: 30px;
+				background: #fff;
+				table{
+					width: 100%;
+					border-top:1px solid $bdc;
+					border-left:1px solid $bdc;
+					td{
+						padding: 5px 20px;
+						font-weight: 800;
+						border-bottom:1px solid $bdc;
+						border-right:1px solid $bdc;
+						background: #fff;
+					}
+					td:nth-child(even){
+						width: 70px;
+						text-align: center;
+					}
+					td:nth-child(odd){
+						width: 310px;
+					}
+					tr:last-child{
+						td:nth-child(3),
+						td:nth-child(4){
+							border: none;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+// ============================
+// プログラム一覧
+// ============================
+/*==============================
+.l-program
+==============================*/
+.l-program{
+	.program-head{
+		height: 85px;
+		font-weight: 800;
+		margin: 0 0 40px;
+		padding: 30px 0 0 ;
+		font-size: 28px;
+		line-height: 1;
+		color: #fff;
+		letter-spacing: .05em;
+		text-indent: .05em;
+		background:$key02;
+	}
+	.program-box{
+		margin: 0 0 170px;
+		.page-head{
+			margin: 73px 0 45px;
+		}
+		.program-course{
+			margin: 0 0 30px 180px;
+			padding: 30px 30px 30px 280px;
+			min-height: 320px;
+			position: relative;
+			background: $bg;
+			h4{
+				margin: 0 0 35px;
+				font-size: 24px;
+				font-weight: 800;
+			}
+		}
+		.program-img{
+			position: absolute;
+			top:50%;
+			left: -180px;
+			margin-top: -125px;
+		}
+		.txt-box{
+			margin-bottom: 80px;
+		}
+		.more-btn{
+			position: absolute;
+			bottom: 30px;
+			right:30px;
+			a{
+				width: 300px;
+				font-size: 17px;
+				letter-spacing: .12em;
+				text-indent: .82em;
+				background-image: url(../img/module/arrow_03.png);
+				background-position: 90px center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}
+// ============================
+// 専任講師紹介
+// ============================
+/*==============================
+.l-lecturer
+==============================*/
+.l-lecturer{
+	padding: 85px 0 140px;
+	.page-head{
+		margin: 0 0 20px;
+	}
+	.intro-txt{
+		margin-bottom: 45px;
+
+	}
+	.lecture-list{
+		li{
+			margin: 0 60px 60px 0;
+			width: 570px;
+			float: left;
+			padding: 30px;
+			background: $bg;
+			strong{
+				font-size: 17px;
+				font-weight: 800;
+			}
+			.right-box{
+				padding: 50px 0 0;
+				width: 344px;
+				border-bottom: 1px solid $key02;
+				.job-post{
+					padding: 13px 0 18px;
+					font-weight: 800;
+					font-size: 15px;
+					line-height: 1.3;
+				}
+			}
+			.name-box{
+				font-size: 24px;
+				font-weight: 800;
+				line-height: 1;
+			}
+			.ruby-box{
+				margin: 0 0 10px;
+				font-size: 15px;
+			}
+			.top-box{
+				padding: 0 0 10px;
+				margin: 0 0 10px;
+			}
+			.charge{
+				margin: 15px 0 0;
+				padding: 15px 0 0;
+				border-top: 1px solid $key02;
+			}
+		}
+		li:nth-child(even){
+			margin-right: 0;
+		}
+	}
+
+}
+// ============================
+// よくある質問
+// ============================
+/*==============================
+.l-faq
+==============================*/
+.l-faq{
+	padding: 100px 0 175px;
+	.faq-box{
+		.page-head{
+			margin: 0 0 135px;
+		}
+	}
+	.faq-list{
+		 counter-reset:item;
+		li:before{
+			 content:"Q" counters(item, "-") ".";
+			 counter-increment:item;
+			 margin-right:0.5em;
+		}
+		li{
+			padding-top: 20px;
+			padding-left:2.5em;
+			text-indent:-2.5em;
+			color: $key02;
+			font-size: 16px;
+			font-weight: 800;
+			border-bottom: 1px solid $bdc;
+			p{
+				text-indent: 0em;
+				padding:15px 0 20px .5em ;
+				color: $bc;
+				font-size: 14px;
+			}
+		}
+	}
+}
+// ============================
+// 会社概要　
+// ============================
+/*==============================
+.l-company
+==============================*/
+.l-company{
+	padding: 85px 0 170px;
+	.page-head{
+		margin: 0 0 20px;
+	}
+	.intro-txt{
+		margin-bottom: 45px;
+	}
+	.company-box{
+		.gmap{
+			margin: 0 0 20px;
+		}
+		strong,th{
+			font-weight: 800;
+		}
+		.left-box{
+			width: 570px;
+			p{
+				margin: 0 0 15px;
+			}
+		}
+		.right-box{
+			float: none;
+			table{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			th{
+				width: 220px;
+				padding: 25px 30px;
+				border-bottom: 1px solid $bdc;
+				vertical-align: top;
+			}
+			td{
+				padding:25px 30px 25px 0;
+				border-bottom: 1px solid $bdc;
+				vertical-align: top;
+			}
+			tr:first-child{
+				td,th{
+					border-top: 1px solid $bdc;
+				}
+			}
+			hr{
+				border: none;
+				border-bottom: 1px solid $bdc;
+			}
+		}
+	}
+}
+// ============================
+// トピックス
+// ============================
+/*==============================
+.l-topics
+==============================*/
+.l-topics{
+	.l-main{
+		float: left;
+		width: 920px;
+		padding: 0 0 100px;
+	}
+	.l-side{
+		float: right;
+		width: 240px;
+		padding: 0 0 100px;
+	}
+	.topics-head{
+		margin: 0 0 30px;
+		font-size: 24px;
+		font-weight: 800;
+		line-height: 1;
+	}
+	.intro-txt{
+		margin: 0 0 35px;
+	}
+	.cat-area{
+		padding: 10px 0;
+		font-size: 18px;
+		font-weight: 800;
+		letter-spacing: .1em;
+		border-top: 1px solid $bdc;
+		border-bottom: 1px solid $bdc;
+		.right-box{
+			padding: 8px 0 0;
+			color: #93989e;
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+	.topics-list{
+		margin: 0 0 80px;
+		li{
+			padding: 10px 0;
+			border-bottom: 1px solid $bdc;
+			a{
+				display: block;
+				padding: 30px 0;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid transparent;
+			}
+			@include td-none();
+			a:hover{
+				border-top: 1px solid $key;
+				border-bottom: 1px solid $key;
+			}
+			.img-box{
+				width: 440px;
+			}
+			.txt-box{
+				width: 440px;
+				.date{
+					margin: 0 15px 10px 0;
+					color: #61686f;
+				}
+				.cat-name{
+					padding: 0 0 0 23px;
+					margin: 0 0 10px;
+					color: #2f3439;
+					background: url(../img/page/topics/topics_icon.png)no-repeat left center;
+				}
+				.ttl{
+					letter-spacing: .05em;
+					font-weight: 800;
+					font-weight: 800;
+				}
+			}
+		}
+	}
+
+	.wp-pagenavi{
+		text-align: center;
+		.pages{
+			display: none;
+		}
+		a,span{
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			padding: 5px 0 0;
+			font-size: 12px;
+			font-weight: 800;
+			border: 1px solid $bdc;
+		}
+		.previouspostslink,
+		.nextpostslink{
+			color: #e4e4e4;
+		}
+		@include td-none();
+		a{
+			&:hover{
+				background: rgba($key02,.1);
+			}
+		}
+
+	}
+	.side-ttl{
+		padding: 0 0 15px 30px;
+		margin: 0 0 15px;
+		font-size: 18px;
+		font-weight: 800;
+		letter-spacing: .05em;
+		line-height: 1;
+		border-bottom: 1px solid $bdc;
+	}
+	.side-cat-ttl{
+		background: url(../img/page/topics/icon_01.png)no-repeat left 4px;
+	}
+	.side-tag-ttl{
+		background: url(../img/page/topics/icon_02.png)no-repeat left 1px;
+	}
+	.side-ranking-ttl{
+		background: url(../img/page/topics/icon_03.png)no-repeat left top;
+	}
+	.side-list{
+		margin: 0 0 60px;
+		@include td-none();
+		a:hover{
+			background-color: rgba($key02,.1);
+		}
+	}
+	.side-cat-list{
+		a{
+			display: block;
+			padding: 0 0 0 15px;
+			margin: 0 0 5px;
+			background: url(../img/module/arrow_01.png)no-repeat left center;
+		}
+
+	}
+	.side-tag-list{
+		li{
+			position: relative;
+			display: inline-block;
+			margin: 0 1em 0 0;
+			a{
+				display: block;
+			}
+		}
+		li:not(:last-child)::after{
+			content:',';
+			position: absolute;
+			right: -.75em;
+			bottom: 0;
+		}
+	}
+	.side-ranking-list{
+		a{
+			display: block;
+			padding: 0 0 15px;
+		}
+		li{
+			position: relative;
+			margin: 0 0 15px;
+		}
+		.rank{
+			position: absolute;
+			top:0;
+			left:0;
+			display: block;
+			width: 30px;
+			height: 30px;
+		}
+		.rank::after{
+			display: block;
+			padding: 8px 0 0;
+			line-height:1;
+			font-size: 18px;
+			color: #fff;
+			text-align: center;
+		}
+		.side-rank-txt{
+			padding: 10px 0 0;
+			font-size: 12px;
+			font-weight: 800;
+			line-height: 1.75;
+		}
+		li:first-child{
+			.rank{
+				background: #e9ab40;
+			}
+			.rank::after{
+				content:"1";
+			}
+		}
+
+		li:nth-child(2){
+			.rank{
+				background: #656cb1;
+			}
+			.rank::after{
+				content:"2";
+			}
+		}
+		li:nth-child(3){
+			.rank{
+				background: #e95c40;
+			}
+			.rank::after{
+				content:"3";
+			}
+		}
+	}
+}
+.l-topics-single{
+	.post-box{
+		.post-head{
+			margin: 0 0 40px;
+			.ttl{
+				margin: 0 0 25px;
+				font-weight: 800;
+				font-size: 28px;
+				line-height: 1.7;
+				letter-spacing: .05em;
+			}
+			& > span{
+				margin: 0 30px 0 0;
+			}
+			.cat-name{
+				padding: 0 0 0 25px;
+				font-size: 12px;
+				background: url(../img/page/topics/topics_icon.png)no-repeat left center;
+			}
+			.tag-name{
+				padding: 2px 0 2px 25px;
+				font-size: 12px;
+				background: url(../img/page/topics/topics_single_icon_02.png)no-repeat left center;
+				span:not(:last-child)::after{
+					content:',';
+				}
+			}
+		}
+		.topics-post{
+			padding: 0 0 40px;
+			margin: 0 0 30px;
+			border-bottom: 1px solid $bdc;
+			img{
+				margin: 0 0 30px;
+			}
+			p{
+				margin: 0 0 30px;
+			}
+			strong{
+				font-weight: 800;
+			}
+			a{
+				color: $key02;
+			}
+			h2{
+				padding: 40px 0 0;
+				margin: 0 0 25px;
+				font-size: 24px;
+				font-weight: 800;
+				border-bottom: 1px solid $bdc;
+			}
+			h3{
+				padding: 40px 0 0;
+				margin: 0 0 25px;
+				font-size: 18px;
+				font-weight: 800;
+			}
+			h4{
+				padding: 20px 0 0;
+				margin: 0 0 25px;
+				font-size: 16px;
+				font-weight: 800;
+			}
+			ol{
+				margin: 0 0 30px;
+				padding-left:1em;
+				list-style-type:decimal;
+			}
+
+			ul{
+				margin: 0 0 30px;
+				padding-left:1em;
+				list-style-type:disc;
+			}
+		}
+
+	}
+	.prev-next{
+		li {
+			width: 390px;
+			color: $key02;
+		}
+		a{
+			color: $key02;
+
+		}
+	}
+}
+// ============================
+// コース
+// ============================
+/*==============================
+.l-course
+==============================*/
+
+.l-course{
+
+	.intro-txt{
+		font-size: 16px;
+	}
+
+
+	padding: 0 0 100px;
+	.course-anchor-list{
+		margin: 0 0 90px;
+		& > li{
+			float: left;
+			margin-right: 24px;
+			& > a, & > span{
+				display: block;
+				width: 180px;
+				height: 70px;
+				padding: 14px 0 0;
+				text-indent: -.05em;
+				color: #fff;
+				font-size: 16px;
+				text-align: center;
+				background: url(../img/module/arrow_04.png)no-repeat center 57px $bc;
+				transition: .3s;
+			}
+			@include td-none();
+			& > a:hover,
+			& > span:hover{
+				background-color: $key02;
+			}
+		}
+		li:last-child{
+			margin-right: 0
+		}
+		.parent-list{
+			position: relative;
+			perspective: 400px;
+
+			&:hover li{
+			 transform: rotateY(0);
+		   }
+			 ul{
+			position: absolute;
+			width: 180px;
+
+			visibility: hidden;
+			 z-index: 9999;
+			 top: 100%;
+			 left: 0;
+			 margin: 0;
+			 padding: 0;
+
+			li{
+				  transform: rotateY(90deg);
+				  transform-origin: 50% 0;
+				  transition: .3s;
+				  width: 100%;
+				   background: rgba($key02,.8);
+				  a{
+					  display: block;
+					  padding: 5px;
+					  width: 100%;
+					  text-align: center;
+					  color: #fff;
+				  }
+				}
+				&:nth-child(2) {
+				 transition-delay: .1s;
+			   }
+			   &:nth-child(3) {
+				 transition-delay: .2s;
+			   }
+			   &:nth-child(4) {
+				 transition-delay: .3s;
+			   }
+			   &:nth-child(5) {
+				 transition-delay: .4s;
+			   }
+			   li:hover a{
+		   	  background: rgba($key,.8);
+		     }
+			}
+			&:hover ul{
+
+				 visibility: visible;
+				 li:nth-child(2) {
+				  transition-delay: .1s;
+				}
+				li:nth-child(3) {
+				  transition-delay: .2s;
+				}
+				li:nth-child(4) {
+				  transition-delay: .3s;
+				}
+				li:nth-child(5) {
+				  transition-delay: .4s;
+				}
+			  }
+		}
+	}
+	.page-head{
+		margin: 0 0 20px;
+	}
+	.intro-txt{
+		margin-bottom: 75px;
+	}
+	.course-head{
+		margin: 0 0 45px;
+	}
+	.course-feature{
+		margin: 0 0 75px;
+		.course-point{
+			margin: 0 0 30px 180px;
+			padding: 30px 30px 30px 280px;
+			min-height: 320px;
+			position: relative;
+			background: $bg;
+			.course-img{
+				position: absolute;
+				top:50%;
+				left: -180px;
+				margin-top: -125px;
+			}
+			h5{
+				font-size: 24px;
+				font-weight: 800;
+				margin-bottom: 20px;
+			}
+			dt{
+				font-size: 20px;
+				font-weight: 800;
+			}
+			dd{
+				font-size: 15px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.course-object{
+		margin: 0 0 95px;
+		li{
+			float: left;
+			width: 585px;
+			font-size: 16px;
+			h5{
+				height: 40px;
+				color: #fff;
+				font-size: 20px;
+				text-align: center;
+				letter-spacing: .05em;
+				text-indent: .05em;
+				background: $key02;
+			}
+			p{
+				padding: 20px 30px;
+				border:1px solid $bdc;
+				border-top:none;
+			}
+		}
+		li:first-child{
+			margin-right: 30px;
+			p{
+				padding-top: 31px;
+			}
+		}
+	}
+	.course-conceptual{
+		margin: 0 0 95px;
+		text-align: center;
+	}
+	.rhombus-list{
+		li::before {
+			padding: 0 .25em 10px 0;
+			content:"◆";
+		}
+	}
+	.point-list.circleorder  {
+		position: relative;
+		margin:0;
+		padding:0;
+		li::before{
+			content:none;
+		}
+		li  {
+		list-style: none;
+		list-style-position:outside;
+		margin:0;
+		padding-left:1.25em;
+		text-indent: 0;
+		}
+		span {
+		   position: absolute;
+		   left:0;
+		   margin:0;
+	  	 }
+		 .kuromaru,.rhombus{
+			 text-indent: -1.5em;
+		 }
+		 .kuromaru::before {
+ 			padding: 0 .5em 3px 0;
+ 			content:"●" !important;
+ 		}
+ 		.rhombus::before {
+ 			padding: 0 .25em 10px 0;
+ 			content:"◆" !important;
+ 		}
+	}
+
+
+	.point-list{
+		li{
+			padding: 0 0 0 1.5em;
+			text-indent: -1.5em;
+		}
+		li::before {
+			padding: 0 .25em 3px 0;
+			content:"・";
+		}
+
+		.kuromaru::before {
+			padding: 0 .5em 3px 0;
+			content:"●" ;
+		}
+		.rhombus::before {
+			padding: 0 .25em 10px 0;
+			content:"◆" ;
+		}
+	}
+	.course-program-order{
+		padding: 15px 0 0;
+		font-size: 18px;
+		font-weight: 800;
+		line-height: 1.75;
+	}
+	.course-program{
+		padding: 0 0 100px;
+		font-size: 15px;
+		.course-program-list{
+			width: 100%;
+			margin: 18px 0 40px;
+			& > li{
+				padding: 0 0 0 20px;
+				width: 400px;
+				li,p{
+					letter-spacing: .03em;
+				}
+			}
+			& > li:not(:last-child){
+				border-right: 1px solid $bdc;
+			}
+			li:first-child{
+				.course-program-order{
+					color: $key02;
+				}
+			}
+			li:nth-child(2){
+				.course-program-order{
+					color: #119fd4;
+				}
+			}
+			li:nth-child(3){
+				.course-program-order{
+					color: $key;
+				}
+			}
+			p{
+				margin: 10px 0 0
+			}
+		}
+		.course-program-note{
+			padding: 0 23px;
+			text-align: right;
+		}
+
+	}
+	.course-follow{
+		margin: 0 0 84px;
+		h5{
+			margin: 20px 0 15px;
+			font-weight: 800;
+			font-size: 20px;
+		}
+		h5::before{
+			padding: 0 .5em 0 0;
+			content:"●";
+			color: $key02;
+		}
+		p{
+			font-size: 15px;
+		}
+	}
+	.course-voice{
+		padding: 0 0 100px;
+		.course-voice-list{
+			li{
+				position: relative;
+				float: left;
+				width: 585px;
+				margin: 0 0 45px;
+				padding: 30px 20px;
+				border: 1px solid $bdc;
+				.ttl{
+					padding: 0 0 20px;
+					margin: 0 0 10px;
+					color: $key;
+					font-weight: 800;
+					font-size: 20px;
+					text-align: center;
+					text-indent: .05em;
+					border-bottom: 1px solid $bdc;
+				}
+				.coment{
+					font-size: 15px;
+					padding: 0 24px 20px;
+				}
+				.profile{
+					padding: 0 0 0 64px;
+					background: url(../img/page/course/course_icon.png) no-repeat 24px center;
+				}
+				.order{
+					position: absolute;
+					display: block;
+					left:7px;
+					top:-15px;
+					width: 100px;
+					height: 30px;
+					padding: 10px 0 0;
+					font-size: 12px;
+					font-weight: 800;
+					color: #fff;
+					text-align: center;
+					line-height: 1;
+					text-indent: .05em;
+					background: $key02
+				}
+			}
+			li:nth-child(odd){
+				margin-right: 30px;
+			}
+		}
+
+	}
+	.course-btn-area{
+		padding: 40px 0 50px;
+		background: $bg;
+		.course-contact-btn{
+			line-height: 1;
+			margin: 0 0 30px;
+			text-align: center;
+			text-indent: .05em;
+			font-size: 28px;
+			font-weight: 800;
+		}
+		.course-btn-list{
+			width: 630px;
+			margin: 0 auto;
+			li{
+				float: left;
+			}
+			li:first-child{
+				margin-right: 30px;
+			}
+			a{
+				display: block;
+				width: 300px;
+				height: 70px;
+				font-size: 20px;
+				padding: 17px 0 10px 90px;
+				color: #fff;
+				transition: .3s;
+			}
+			@include td-none();
+			.course-btn-01 a{
+				margin: 0 0 20px;
+				background: $key02 url(../img/page/course/course_icon_01.png)no-repeat 40px center;
+				&:hover{
+					background-color: $key02 + #222;
+				}
+			}
+			.course-btn-02 a{
+				padding: 17px 0 10px 65px;
+
+				background: $key url(../img/page/course/course_icon_02.png)no-repeat 20px center;
+				&:hover{
+					background-color: $key + #222;
+				}
+			}
+		}
+	}
+	table{
+		width: 100%;
+		th{
+			color: #fff;
+			font-size: 20px;
+			font-weight: 800;
+			background: $key02;
+			padding: 0 25px;
+			vertical-align: middle ;
+			.note{
+				font-size: 14px;
+			}
+		}
+		th.center{
+			text-indent: .05em;
+		}
+		th,td{
+			letter-spacing: .05em;
+		}
+		td{
+			vertical-align: top;
+		}
+		.two-line{
+			line-height: 1.2;
+		}
+	}
+	table.one-column{
+		td{
+			border: 1px solid $bdc;
+			padding: 10px 25px;;
+		}
+
+	}
+	table.course05-table{
+		.price{
+			padding: 25px 0;
+			width: 440px;
+		}
+	}
+	.course-lecturer{
+		margin: 100px 0 0 ;
+		padding: 0 0 85px;
+		table{
+			font-size: 15px;
+			margin-bottom: 35px;
+		}
+		.course-price-table{
+			thead{
+				th{
+					height: 85px;
+				}
+			}
+
+
+		}
+	}
+	.bbw{
+		border-bottom: 1px solid #fff;
+	}
+	.brw{
+		border-right: 1px solid #fff;
+	}
+
+	.btg{
+		border-top: 1px solid #efefef;
+	}
+	.bbg{
+		border-bottom: 1px solid #efefef;
+	}
+	.brg{
+		border-right: 1px solid #efefef;
+	}
+	.sub-head{
+		width: 120px;
+		height: 45px;
+		text-align: center;
+		text-indent: .05em;
+		font-size: 16px;
+		background: $bg;
+		vertical-align: middle;
+	}
+	.price{
+		width: 308px;
+		text-align: center;
+		text-indent: .05em;
+		vertical-align: middle;
+		font-size: 16px;
+	}
+	.course-area{
+		margin: 0 0 100px;
+		table{
+			margin: 0 0 30px;
+			font-size: 15px;
+		}
+		td:first-child{
+			width: 85px;
+			padding-right: 0;
+			border-right: none
+		}
+		td:last-child{
+			border-left: none;
+		}
+	}
+	.course-entry-attention{
+		font-size: 15px;
+		padding: 95px 0;
+		.course-entry-note{
+			dt{
+				margin: 0 0 25px;
+				border-left: 5px solid $key02;
+				padding: 0 0 0 22px;
+				font-size: 20px;
+				font-weight: 800;
+				line-height: 1;
+			}
+			dd{
+				padding: 0 0 0 5px;
+				margin: 0 0 30px;
+			}
+			ul{
+				margin: 0 0 10px;
+			}
+			p{
+				padding: 30px 0;
+			}
+		}
+	}
+	.two-table-box{
+		table{
+			margin: 0 0 10px;
+		}
+		.left-box,.right-box{
+			width: 585px;
+		}
+		.left-box table td{
+			height: 230px;
+		}
+		.price{
+			width: 190px;
+		}
+		.course-price-table{
+			th{
+				text-align: left;
+			}
+		}
+	}
+.gmc-table th{
+	width: 340px;
+}
+}

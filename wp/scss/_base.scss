@@ -1,0 +1,102 @@
+@charset "utf-8";
+// ============================
+// 共通パーツ読み込み
+// ============================
+@import "_core";
+
+// ============================
+// ベーススタイル
+// 要素自体のスタイルを設定
+// 汎用性が無くなるのであまり設定しないこと
+// ============================
+
+
+*,
+*:before,
+*:after {
+	box-sizing:inherit;
+}
+html {
+
+	box-sizing:border-box;
+	font-size:62.5%;
+
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Light");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold");
+  font-weight: 800;
+}
+
+body {
+	line-height:2;
+	font-size:14px;
+	min-width: 1230px;
+	font-family:"游ゴシック体", "Yu Gothic", YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'sans-serif';
+	color:#333;
+}
+.fjalla{
+	font-family: 'Fjalla One', 'sans-serif';
+	letter-spacing: .05em;
+}
+a {
+	color: $bc;
+	letter-spacing: .05em;
+	&:link,
+	&:visited {
+		text-decoration:none;
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration:underline;
+		img {
+			transition: .3s;
+			opacity: 0.7;
+			filter: alpha(opacity=70);
+			-ms-filter: "alpha(opacity=70)";
+			outline: none;
+		}
+	}
+}
+p,li{
+	letter-spacing: .05em;
+}
+img {
+
+	max-width:100%;
+	height:auto;
+	box-sizing:content-box;
+	vertical-align:middle;
+	line-height:1;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	max-height:100%;
+}
+
+
+//ボタン・ラベル上のマウスカーソルを指カーソルに
+input[type="button"],input[type="submit"],input[type="reset"],label{
+	cursor:pointer;
+}
+
+.header-logo,
+.footer-logo {
+	a:hover img {
+		opacity:1;
+		filter: alpha(opacity=100);
+		-ms-filter: "alpha(opacity=100)";
+	}
+}

@@ -1,0 +1,5 @@
+# パスワードは”J79KxRvGwrsa”となります。
+AuthType Basic
+AuthName "please, Input password"
+AuthUserFile /home/users/0/lovepop.jp-kaido-user/web/spchtaccess/.htpasswd
+require valid-user

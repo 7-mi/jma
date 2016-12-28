@@ -1,0 +1,335 @@
+@charset "utf-8";
+// ============================
+// 共通パーツ読み込み
+// ============================
+@import "_core";
+
+// ============================
+// 共通要素
+// ============================
+/*==============================
+共通要素
+==============================*/
+.wrap {
+	@include wrap(1230px);
+}
+.table{
+	display:table;
+}
+.cell{
+	display:table-cell;
+}
+.left-box{
+	float: left;
+}
+.right-box{
+	float: right;
+}
+.center{
+	text-align: center;
+}
+.fjalla.center{
+	text-indent: .05em;
+}
+.head-area{
+	margin: 0 0 50px;
+	text-align: center;
+	*{
+		text-indent: -.05em;
+	}
+	.content-head{
+		margin: 0 0 20px;
+		font-size: 42px;
+		line-height: 1;
+		& + span{
+			display: inline-block;
+			 margin: 0 0 20px;
+			 font-size: 18px;
+			 line-height: 1;
+			 font-weight: 800;
+		}
+	}
+
+
+}
+.intro-txt{
+	width: 800px;
+	margin: 0 auto;
+}
+.more-btn{
+	text-align: center;
+	a{
+		margin: 0 auto;
+		padding: 18px 0 0;
+		display: block;
+		width: 360px;
+		height: 50px;
+		color: #fff;
+		letter-spacing: .2em;
+		text-indent: .2em;
+		line-height: 1;
+		background: $bc;
+		transition: .5s;
+	}
+	@include td-none();
+	a:hover{
+		background:  $key;
+
+	}
+}
+// ============================
+// l-header
+// ============================
+/*==============================
+ヘッダー
+==============================*/
+.l-header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	min-width: 1230px;
+	z-index: 5;
+	transition: background .3s;
+	.header-logo{
+		float: left;
+		padding: 30px 35px;
+	}
+	.l-nav{
+		float: right;
+		.nav-list {
+			padding: 0 35px 0 0 ;
+			li{
+				float: left;
+			}
+			a{
+				display: block;
+				padding:  45px 18px;
+				line-height: 1;
+				font-weight: 800;
+				text-indent: .05em;
+				color: #fff;
+				font-size: 13px;
+				transition: .3s;
+			}
+			@include td-none();
+			a:hover,
+			.nav-program.active{
+				background:rgba($key,.8);
+			}
+			.nav-program{
+				position: relative;
+				perspective: 400px;
+
+				&:hover li{
+				 transform: rotateY(0);
+			   }
+				 ul{
+				position: absolute;
+				width: 300px;
+
+				visibility: hidden;
+				 z-index: 9999;
+				 top: 100%;
+				 left: 0;
+				 margin: 0;
+				 padding: 0;
+
+				li{
+					  transform: rotateY(90deg);
+					  transform-origin: 20% 0;
+					  transition: .3s;
+					  width: 100%;
+					   background: rgba($key02,.8);
+					  a{
+						  padding: 15px;
+						  width: 100%;
+					  }
+					}
+					&:nth-child(2) {
+					 transition-delay: .1s;
+				   }
+				   &:nth-child(3) {
+					 transition-delay: .2s;
+				   }
+				   &:nth-child(4) {
+					 transition-delay: .3s;
+				   }
+				   &:nth-child(5) {
+					 transition-delay: .4s;
+				   }
+				}
+				&:hover ul{
+					 visibility: visible;
+
+
+					 li:nth-child(2) {
+					  transition-delay: .1s;
+					}
+					li:nth-child(3) {
+					  transition-delay: .2s;
+					}
+					li:nth-child(4) {
+					  transition-delay: .3s;
+					}
+					li:nth-child(5) {
+					  transition-delay: .4s;
+					}
+				  }
+			}
+			.nav-btn{
+				padding: 35px 10px 0;
+				a{
+					padding: 13px 40px;
+					width: 140px;
+					height: 38px;
+				}
+			}
+			.nav-btn-01 a{
+				background: $key02;
+				&:hover{
+					background: $key02 + #222;
+				}
+			}
+			.nav-btn-02 a{
+				background: $key;
+				&:hover{
+					background: $key + #222;
+				}
+			}
+
+ 		}
+	}
+}
+.l-header.scroll {
+	background: #333;
+	.l-nav .nav-list a:hover{
+		background:rgba($key,1);
+	}
+}
+.h1-area{
+	position: relative;
+	width: 100%;
+	min-width: 1230px;
+	h1{
+		position: absolute;
+		top:0px;
+		left:35px;
+		color: #fff;
+		z-index: 10;
+		font-size: 12px;
+	}
+}
+
+
+// ============================
+// l-contents
+// ============================
+/*==============================
+コンテンツ
+==============================*/
+.l-contents {
+	.content{
+		padding: 100px 0 ;
+	}
+}
+
+// ============================
+// l-footer
+// ============================
+/*==============================
+フッター
+==============================*/
+.l-footer {
+	background: $bc;
+	.to-top{
+		display: block;
+		min-width: 1230px;
+		height: 71px;
+		background: url(../img/module/arrow_02.png)no-repeat center #efefef;
+		transition: .5s;
+		&:hover{
+			background-color: $key02;
+		}
+	}
+	.footer-btn-box{
+		padding: 60px 30px 85px;
+		vertical-align: top;
+		background: #2b2b2b;
+		.footer-logo{
+			margin: 0 0 50px;
+		}
+		.footer-btn-list{
+			a{
+				display: block;
+				width: 200px;
+				padding: 10px 0 10px 80px;
+				color: #fff;
+				transition: .3s;
+			}
+			@include td-none();
+			.footer-btn-01 a{
+				margin: 0 0 20px;
+				background: $key02 url(../img/layout/footer/footer_icon_01.png)no-repeat 45px center;
+				&:hover{
+					background-color: $key02 + #222;
+				}
+			}
+			.footer-btn-02 a{
+				background: $key url(../img/layout/footer/footer_icon_02.png)no-repeat 45px center;
+				&:hover{
+					background-color: $key + #222;
+				}
+			}
+		}
+	}
+	.l-footer-nav{
+		padding: 60px 0 0 50px;
+		a,.footer-program-head{
+			padding: 0 0 0 15px;
+			font-size: 12px;
+			color: #ddd;
+		}
+		li,.footer-program-head{
+			background: url(../img/module/arrow_01.png)no-repeat left center;
+		}
+		.footer-nav-list {
+			margin: 10px 0 45px;
+			li{
+				padding:0 35px 0 0;
+				line-height: 1.8;
+			}
+		}
+		.footer-program-head{
+			margin: 0 0 bv5px;
+		}
+		.footer-program-list{
+			margin: 0 0 35px;
+			 li{
+				padding: 0 50px 5px 0;
+			}
+		}
+		.footer-link-list{
+			li{
+				background: none;
+				padding: 0 30px 0 0;
+				a{
+					padding: 0;
+					color: #9d9d9d;
+					font-size: 10px;
+				}
+			}
+		}
+	}
+	.l-copyright{
+		padding: 15px 0;
+		background: #fff;
+		text-align: center;
+		small{
+			font-size: 10px;
+			color: #9d9d9d;
+			letter-spacing: .05em;
+			text-indent: .05em;
+		}
+	}
+}

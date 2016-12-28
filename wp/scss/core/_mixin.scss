@@ -1,0 +1,148 @@
+@charset "utf-8";
+// ============================
+// 共通パーツ読み込み
+// ============================
+@import "_variable";
+// ====================================
+// mixin
+// ====================================
+@mixin wrap($value:1030px) {
+	width:$value;
+	margin:0 auto;
+	padding:0 15px;
+}
+@mixin in_wrap($value:710px) {
+	width:$value;
+	margin:0 auto;
+	padding:0 15px;
+}
+
+//@include debug();	//デバッグ
+@mixin debug{//デバッグ
+	@debug "■■■デバッグコードON■■■";
+	a:not([href]),a[href=""]{
+		background:red!important;
+		*{
+			@include opacity(.5);//opacity
+		}
+	}
+	img:not([alt]),img[alt=""],
+	img:not([width]),img[width=""]{
+		@include animation-name(error-img);//アニメーション名
+		@include animation-delay(0);//開始時間
+		@include animation-duration(3s);//1ループの時間
+		@include animation-timing-function(linear);//アニメーションタイプ
+		@include animation-iteration-count(infinite);//実行回数 infinite:無限
+		@include experimental(animation-fill-mode,both);//アニメ開始前後のスタイル [none:維持しない] forwards:最終状態を維持 backwards:開始前から初期状態 both:fb両方
+	}
+	@include keyframes(error-img){//アニメーション定義
+		0%{//初期状態
+			@include rotateY(0);//回転
+		}
+		100%{//最終状態
+			@include rotateY(360deg);//回転
+		}
+	}
+}
+//position:absolute用
+@mixin absPosition($top:auto, $right:auto, $bottom:auto, $left:auto){
+	position:absolute;
+	top:$top;
+	right:$right;
+	bottom:$bottom;
+	left:$left;
+}
+
+//border-radius100％で円をつくる
+@mixin circle($size){
+	width: $size;
+	height: $size;
+	border-radius:100%;
+}
+
+//プレースホルダーのスタイル設定
+@mixin placeholder{
+    form{
+        ::-webkit-input-placeholder{
+            @content;
+        }
+        :-moz-placeholder{
+            opacity:1;
+            @content;
+        }
+        ::-moz-placeholder{
+            opacity:1;
+            @content;
+        }
+        :-ms-input-placeholder{
+            @content;
+        }
+    }
+}
+@include placeholder{    //プレースホルダー（テキストフォームの例文）のスタイル設定
+    color:#C6C6C6;
+}
+
+//選択範囲のスタイル設定
+@mixin selection($selector:null){
+    #{$selector}::-moz-selection{
+        @content;
+    }
+    #{$selector}::selection{
+        @content;
+    }
+}
+
+@include selection(){    //選択範囲の装飾設定
+    color:#FFF;
+    background:rgba($key,.7);
+}
+
+@mixin f-4-list($width:1030px,$mr:20px,$mb:20px){
+    .f-4-list{
+        box-sizing:border-box;
+     li{
+         box-sizing:border-box;
+        float:left;
+        width:($width - $mr * 3) / 4;
+        margin:0 $mr $mb 0;
+    }
+     li:nth-child(4n){
+        margin-right: 0;
+    }
+    }
+	.f-4-list::after{
+		clear: both;
+	    content: "";
+	    display: block;
+	    height: 0;
+	}
+}
+
+@mixin f-3-list($width:1030px,$mr:20px,$mb:20px){
+    .f-3-list{
+        box-sizing:border-box;
+     li{
+         box-sizing:border-box;
+        float:left;
+        width:($width - $mr * 2) / 3;
+        margin:0 $mr $mb 0;
+    }
+     li:nth-child(3n){
+        margin-right: 0;
+    }
+    }
+	.f-3-list::after{
+		clear: both;
+	    content: "";
+	    display: block;
+	    height: 0;
+	}
+}
+@mixin td-none(){
+    a:hover,
+    a:active,
+    a:focus{
+        text-decoration:none;
+    }
+}

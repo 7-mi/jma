@@ -1,0 +1,171 @@
+@charset "UTF-8";
+/* General */
+.float-list, .cf {
+  *zoom: 1;
+}
+.float-list:after, .cf:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+form ::-webkit-input-placeholder {
+  color: #C6C6C6;
+}
+form :-moz-placeholder {
+  opacity: 1;
+  color: #C6C6C6;
+}
+form ::-moz-placeholder {
+  opacity: 1;
+  color: #C6C6C6;
+}
+form :-ms-input-placeholder {
+  color: #C6C6C6;
+}
+
+::-moz-selection {
+  color: #FFF;
+  background: rgba(31, 127, 194, 0.7);
+}
+
+::selection {
+  color: #FFF;
+  background: rgba(31, 127, 194, 0.7);
+}
+
+.float-list li {
+  float: left;
+}
+
+/* Base */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 1.9;
+  font-size: 14px;
+  font-family: 'Lucida Grande', "游ゴシック体", "Yu Gothic", YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'sans-serif';
+  color: #333;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+a:hover, a:active, a:focus {
+  text-decoration: underline;
+}
+a:hover img, a:active img, a:focus img {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -ms-filter: "alpha(opacity=70)";
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  box-sizing: content-box;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  max-height: 100%;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], label {
+  cursor: pointer;
+}
+
+.dummy {
+  text-decoration: line-through !important;
+  color: #f00 !important;
+}
+
+.header-logo a:hover img,
+.footer-logo a:hover img {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "alpha(opacity=100)";
+}
+
+/* Layout */
+/*==============================
+共通要素
+==============================*/
+.wrap {
+  width: 1030px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.table {
+  display: table;
+}
+
+.cell {
+  display: table-cell;
+}
+
+.left-box {
+  float: left;
+}
+
+s
+.right-box {
+  float: right;
+}
+
+@media screen and (min-width: 641px) {
+  /* 641px以上の場合 */
+  .hidden-sp {
+    display: block;
+  }
+
+  .hidden-pc {
+    display: none;
+  }
+}
+/*==============================
+ヘッダー
+==============================*/
+/*==============================
+グローバルナビ
+==============================*/
+/*==============================
+コンテンツ
+==============================*/
+/*==============================
+フッター
+==============================*/
+/*==========================================================================================
+ここからSP
+==========================================================================================*/
+@media only screen and (max-width: 640px) {
+  .hidden-sp {
+    display: none;
+  }
+
+  .hidden-pc {
+    display: block;
+  }
+
+  .wrap {
+    padding: 0;
+    width: 100%;
+  }
+
+  .smallbox {
+    padding: 0 3.125%;
+  }
+}
